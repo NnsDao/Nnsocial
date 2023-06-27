@@ -8,9 +8,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
-        {import.meta.env.__APP__name} - {import.meta.env.__APP__canister_type} - {import.meta.env.__APP__canister_id}
-      </h1>
       <AppRouter></AppRouter>
     </div>
   );

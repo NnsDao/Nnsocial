@@ -1,25 +1,23 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouteObject, useRoutes } from 'react-router-dom';
+import Account from '../pages/Account/account';
 import Home from '../pages/Home';
 
-const routes = createBrowserRouter([
+import React from 'react';
+
+const routes: RouteObject[] = [
   {
     path: '/',
     element: <Home />,
-    children: [
-      // { index: true, element: <Home /> },
-      // {
-      //   path: "/courses",
-      //   element: <Courses />,
-      //   children: [
-      //     { index: true, element: <CoursesIndex /> },
-      //     { path: "/courses/:id", element: <Course /> },
-      //   ],
-      // },
-      // { path: "*", element: <NoMatch /> },
-    ],
+    index: true,
   },
-]);
+  {
+    path: '/account',
+    element: <Account />,
+    index: true,
+  },
+];
+
 export default function AppRouter() {
-  window.scroll(0, 0);
-  <RouterProvider router={routes}></RouterProvider>;
+  // window.scroll(0, 0);
+  return <React.Fragment>{useRoutes(routes)}</React.Fragment>;
 }
